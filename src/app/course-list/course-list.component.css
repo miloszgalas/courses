@@ -1,0 +1,18 @@
+/*.list{*/
+/*  margin-bottom: 1em;*/
+/*}*/
+/*.row{*/
+/*  padding: 30px;*/
+/*}*/
+
+.zebra:nth-child(even) {
+  background-color: rgba(185, 229, 255, 0.4);
+}
+
+.zebra:nth-child(odd) {
+  background-color: rgba(185, 229, 255, 0.8);
+}
+
+.zebra{
+  background: black;
+}
