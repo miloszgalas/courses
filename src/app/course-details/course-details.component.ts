@@ -1,9 +1,10 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Course} from '../interfaces/course';
 import {ActivatedRoute} from '@angular/router';
-import {CourseService} from '../course.service';
-import {AuthService} from '../auth.service';
+import {CourseService} from '../services/course.service';
+import {AuthService} from '../services/auth.service';
 import {Subscription} from 'rxjs';
+import {User} from '../interfaces/user';
 
 @Component({
   selector: 'app-course-details',
@@ -13,8 +14,7 @@ import {Subscription} from 'rxjs';
 export class CourseDetailsComponent implements OnInit {
 
   course: Course;
-  @Input() changeDisp = false;
-  userState: Subscription;
+  user: User;
 
   constructor(private route: ActivatedRoute,
               private service: CourseService,
@@ -31,10 +31,12 @@ export class CourseDetailsComponent implements OnInit {
     this.service.deleteCourse(this.course);
   }
 
+  isAdmin() {
+    return this.user.role === 'admin';
+  }
+
   ngOnInit() {
-    this.userState = this.auth.authState$.subscribe(x => {
-      this.changeDisp = x !== null;
-    });
+    this.auth.user$.subscribe(usr => this.user = usr);
     this.getCourse();
   }
 

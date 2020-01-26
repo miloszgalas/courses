@@ -6,7 +6,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {CourseComponent} from './course/course.component';
 import {CourseListComponent} from './course-list/course-list.component';
-import {CourseService} from './course.service';
+import {CourseService} from './services/course.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AddCourseComponent} from './add-course/add-course.component';
 import {NavbarComponent} from './navbar/navbar.component';
@@ -15,16 +15,17 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
 import {CourseDetailsComponent} from './course-details/course-details.component';
 import {CourseRatingComponent} from './course-rating/course-rating.component';
 import {LoginRegisterComponent} from './login-register/login-register.component';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
 
 const config = {
-  apiKey: 'AIzaSyDqHvkK7Jb6pKTa_tDGDkDalNNMSoVeJpY',
-  authDomain: 'courses-8ac09.firebaseapp.com',
-  databaseURL: 'https://courses-8ac09.firebaseio.com',
-  projectId: 'courses-8ac09',
-  storageBucket: 'courses-8ac09.appspot.com',
-  messagingSenderId: '242918419217',
-  appId: '1:242918419217:web:104372a15e891102e03ab0',
-  measurementId: 'G-KG2YX9RH46'
+  apiKey: 'AIzaSyBHdm8-LinxIuVjRNmrx3xOF4FXZBgHPLU',
+  authDomain: 'courserating-4b086.firebaseapp.com',
+  databaseURL: 'https://courserating-4b086.firebaseio.com',
+  projectId: 'courserating-4b086',
+  storageBucket: 'courserating-4b086.appspot.com',
+  messagingSenderId: '1012450166553',
+  appId: '1:1012450166553:web:39b6c2f45dee602607e788',
+  measurementId: 'G-0E624T964B'
 };
 
 @NgModule({
@@ -45,7 +46,8 @@ const config = {
     NgbRatingModule,
     FormsModule,
     AngularFireModule.initializeApp(config),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFirestoreModule
   ],
   providers: [
     CourseService

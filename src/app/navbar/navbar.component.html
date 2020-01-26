@@ -1,34 +1,6 @@
-<!--<div class="navbar-collapse navbar-fixed-top navbar-expand-md navbar-inverse justify-content-between" id="navbar">-->
-<!--  <div class="container-fluid">-->
-<!--    <a class="navbar-brand" routerLink="list">Course Rating</a>-->
-<!--    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"-->
-<!--            data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"-->
-<!--            aria-label="Toggle navigation">-->
-<!--      <span class="navbar-toggler-icon"></span>-->
-<!--    </button>-->
-<!--    <div class="collapse navbar-collapse" id="navbarResponsive">-->
-<!--      <ul class="navbar-nav text-uppercase ml-auto">-->
-<!--        <li class="nav-item">-->
-<!--          <a class="nav-link" routerLink="/list">Course List</a>-->
-<!--        </li>-->
-<!--        <li class="nav-item" *ngIf="changeDisp">-->
-<!--          <a class="nav-link" routerLink="/add">Add Course</a>-->
-<!--        </li>-->
-<!--      </ul>-->
-<!--      <ul class="navbar-right">-->
-<!--        <li class="" *ngIf="changeDisp">-->
-<!--          {{mail}}-->
-<!--        </li>-->
-<!--        <li>-->
-<!--            <app-login-register></app-login-register>-->
-<!--        </li>-->
-<!--      </ul>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark" id="navbar">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#page-top">Courses Rating</a>
+    <a class="navbar-brand" routerLink="/list">Courses Rating</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
             data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
             aria-label="Toggle navigation">
@@ -40,7 +12,16 @@
           <a class="nav-link" routerLink="/list">Course list</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" *ngIf="changeDisp" routerLink="/add">Add course</a>
+          <a class="nav-link" *ngIf="auth.user$ | async" routerLink="/add">Add course</a>
+        </li>
+        <li>
+          <a class="nav-link" *ngIf="auth.user$ | async as user">
+            {{user.email }}
+          </a>
+          <ng-template #login>
+            <button class="button"></button>
+          </ng-template>
+
         </li>
       </ul>
       <app-login-register></app-login-register>

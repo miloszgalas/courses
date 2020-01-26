@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {AuthService} from '../auth.service';
+import {AuthService} from '../services/auth.service';
 import {Subscription} from 'rxjs';
 
 @Component({
@@ -19,22 +19,22 @@ export class LoginRegisterComponent implements OnInit {
   registerFail: boolean;
 
   login() {
-    console.log(this.authService.getUser());
-    this.authService.signIn(this.email, this.passwd);
+    // console.log(this.authService.getUser());
+    this.authService.signIn(this.email, this.passwd).then();
   }
 
   register() {
-    console.log(this.authService.getUser());
+    // console.log(this.authService.getUser());
     this.authService.signUp(this.email, this.passwd);
   }
 
   logOut() {
-    this.authService.logOut();
+    this.authService.logOut().then();
   }
   ngOnInit() {
-    this.userState = this.authService.authState$.subscribe(x => {
-      this.changeDisp = x !== null;
-    });
+    // this.userState = this.authService.authState$.subscribe(x => {
+    //   this.changeDisp = x !== null;
+    // });
   }
 
 }

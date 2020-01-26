@@ -1,7 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Course} from '../interfaces/course';
-import {CourseService} from '../course.service';
+import {CourseService} from '../services/course.service';
 import {NgbRatingModule, NgbRatingConfig} from '@ng-bootstrap/ng-bootstrap';
+import {User} from '../interfaces/user';
+import {AuthService} from '../services/auth.service';
 
 
 @Component({
@@ -13,14 +15,18 @@ export class CourseRatingComponent implements OnInit {
   @Input() course: Course;
 
   currentRate: 1 | 2 | 3 | 4 | 5 = 3;
+  user: User;
 
-  constructor(private service: CourseService) { }
+  constructor(private service: CourseService,
+              private auth: AuthService) {
+  }
 
   addRating() {
-    this.service.addRating(this.currentRate, this.course);
+    this.service.addRating(this.currentRate, this.course, this.user.uid);
   }
 
   ngOnInit() {
+    this.auth.user$.subscribe(usr => this.user = usr);
   }
 
 }

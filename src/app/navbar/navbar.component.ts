@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/auth';
-import {AuthService} from '../auth.service';
+import {AuthService} from '../services/auth.service';
 import {User} from 'firebase';
 // import {NgbNav} from '@ng-bootstrap/ng-bootstrap';
 import * as firebase from 'firebase';
@@ -29,9 +29,9 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userState = this.auth.authState$.subscribe(x => {
-      this.changeDisp = x !== null;
-    });
+    // this.userState = this.auth.authState$.subscribe(x => {
+    //   this.changeDisp = x !== null;
+    // });
     this.setUser();
   }
 

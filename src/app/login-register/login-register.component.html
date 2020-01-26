@@ -1,7 +1,7 @@
 <form class="form-inline my-2 my-lg-0">
-  <input *ngIf="!changeDisp" class="form-control" type="login" [(ngModel)]="email" name="email" placeholder="Email">
-  <input *ngIf="!changeDisp" class="form-control" type="password" [(ngModel)]="passwd" name="passwd" placeholder="Password">
-  <button *ngIf="!changeDisp" class="btn btn-outline-success navbar-btn" (click)="login()">login</button>
-  <button *ngIf="!changeDisp" class="btn btn-outline-success navbar-btn" (click)="register()">register</button>
-  <button *ngIf="changeDisp" (click)="logOut()" class="btn btn-danger navbar-btn">Log out</button>
+  <input *ngIf="!(authService.user$ | async)" class="form-control" type="login" [(ngModel)]="email" name="email" placeholder="Email">
+  <input *ngIf="!(authService.user$ | async)" class="form-control" type="password" [(ngModel)]="passwd" name="passwd" placeholder="Password">
+  <button *ngIf="!(authService.user$ | async)" class="btn btn-outline-success navbar-btn" (click)="login()">login</button>
+  <button *ngIf="!(authService.user$ | async)" class="btn btn-outline-success navbar-btn" (click)="register()">register</button>
+  <button *ngIf="authService.user$ | async" (click)="logOut()" class="btn btn-danger navbar-btn">Log out</button>
 </form>

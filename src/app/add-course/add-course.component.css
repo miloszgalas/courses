@@ -17,3 +17,11 @@
 .good{
   color: green;
 }
+
+input, textarea{
+  width: 20rem;
+}
+
+.custom-range {
+  width: 50rem;
+}

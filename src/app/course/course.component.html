@@ -14,7 +14,7 @@
       <h4>ratings: {{getRating() | number: '0.0-2'}}</h4>
     </div>
     <div class="row">
-      <button class="delete-button" *ngIf="changeDisp" routerLink="/details/{{course.id}}">Details</button>
+      <button class="delete-button" *ngIf="auth.user$ | async" routerLink="/details/{{course.id}}">Details</button>
     </div>
   </div>
 </div>
