@@ -1,0 +1,72 @@
+Index: src/app/filter/filter.component.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/app/filter/filter.component.ts	(date 1580074379000)
++++ src/app/filter/filter.component.ts	(date 1580075819737)
+@@ -15,7 +15,7 @@
+ 
+   name = '';
+   minects = 0;
+-  maxects = 15;
++  maxects = 10;
+   semester = 0;
+   minrate = 0;
+   maxrate = 5;
+@@ -23,7 +23,7 @@
+   semesterCheck = false;
+   ectsOptions: Options = {
+     floor: 0,
+-    ceil: 15,
++    ceil: 10,
+     showTicks: true,
+     translate: (value: number, label: LabelType): string => {
+       switch (label) {
+Index: src/app/app-routing.module.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/app/app-routing.module.ts	(date 1580074379000)
++++ src/app/app-routing.module.ts	(date 1580076954898)
+@@ -10,7 +10,7 @@
+ const routes: Routes = [
+   {path: 'list', component: CourseListComponent},
+   {path: 'add', component: AddCourseComponent, canActivate: [AdminGuard]},
+-  {path: 'details/:id', component: CourseDetailsComponent},
++  {path: 'details/:id', component: CourseDetailsComponent, canActivate: [AuthGuard]},
+   {path: '', redirectTo: '/list', pathMatch: 'full'}
+ ];
+ 
+Index: src/app/course-list/course-list.component.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/app/course-list/course-list.component.html	(date 1580074379000)
++++ src/app/course-list/course-list.component.html	(date 1580076399305)
+@@ -5,8 +5,8 @@
+     <h1 class="text-center">Lista Kursów</h1>
+   </div>
+ </div>
+-<button class="btn btn-danger float-right" *ngIf="filtersVisible" (click)="hideFilters()">Hide filters</button>
+-<button class="btn btn-success float-right" *ngIf="!filtersVisible" (click)="showFilters()">Show filters</button>
++<button class="btn btn-danger float-right mr-3" *ngIf="filtersVisible" (click)="hideFilters()">Hide filters</button>
++<button class="btn btn-success float-right mr-3" *ngIf="!filtersVisible" (click)="showFilters()">Show filters</button>
+ <app-filter *ngIf="filtersVisible"></app-filter>
+ <div class="container">
+   <br><br>
+Index: src/app/filter/filter.component.scss
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/app/filter/filter.component.scss	(date 1580074379000)
++++ src/app/filter/filter.component.scss	(date 1580076355887)
+@@ -33,4 +33,5 @@
+ 
+ form{
+   padding: 0px 5px;
++  margin: 1rem;
+ }

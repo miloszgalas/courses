@@ -15,7 +15,7 @@ export class FilterComponent implements OnInit {
 
   name = '';
   minects = 0;
-  maxects = 15;
+  maxects = 10;
   semester = 0;
   minrate = 0;
   maxrate = 5;
@@ -23,7 +23,7 @@ export class FilterComponent implements OnInit {
   semesterCheck = false;
   ectsOptions: Options = {
     floor: 0,
-    ceil: 15,
+    ceil: 10,
     showTicks: true,
     translate: (value: number, label: LabelType): string => {
       switch (label) {

@@ -10,7 +10,7 @@ import {AdminGuard} from './admin.guard';
 const routes: Routes = [
   {path: 'list', component: CourseListComponent},
   {path: 'add', component: AddCourseComponent, canActivate: [AdminGuard]},
-  {path: 'details/:id', component: CourseDetailsComponent},
+  {path: 'details/:id', component: CourseDetailsComponent, canActivate: [AuthGuard]},
   {path: '', redirectTo: '/list', pathMatch: 'full'}
 ];
 
