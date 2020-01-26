@@ -1,32 +1,20 @@
 <div class="container">
   <div class="col-xs-3">
-    <div class="col-12">
       <h3>{{ course.name }}</h3>
-    </div>
+    <img src="{{course.img}}">
   </div>
   <div class="col-xs-6">
     <div class="row">
-      <div class="col-12">
-        <h4>ECTS: {{ course.ects }}</h4>
-      </div>
+      <h4>ECTS: {{ course.ects }}</h4>
     </div>
     <div class="row">
-      <div class="col-12">
-        <h4>Semester: {{ course.semester }}</h4>
-      </div>
+      <h4>Semester: {{ course.semester }}</h4>
     </div>
     <div class="row">
-      <div class="col-12">
-        <h4>ratings: {{getRating() | number: '0.0-2'}}</h4>
-      </div>
+      <h4>ratings: {{getRating() | number: '0.0-2'}}</h4>
     </div>
     <div class="row">
-      <div class="col-12">
-        <button class="delete-button" routerLink="/details/{{course.id}}">Details</button>
-      </div>
+      <button class="delete-button" *ngIf="changeDisp" routerLink="/details/{{course.id}}">Details</button>
     </div>
-  </div>
-  <div class="col-xs-3">
-    <img src="{{course.img}}">
   </div>
 </div>

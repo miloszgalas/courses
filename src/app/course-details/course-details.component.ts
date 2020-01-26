@@ -1,7 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Course} from '../interfaces/course';
 import {ActivatedRoute} from '@angular/router';
 import {CourseService} from '../course.service';
+import {AuthService} from '../auth.service';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-course-details',
@@ -11,9 +13,12 @@ import {CourseService} from '../course.service';
 export class CourseDetailsComponent implements OnInit {
 
   course: Course;
+  @Input() changeDisp = false;
+  userState: Subscription;
 
   constructor(private route: ActivatedRoute,
-              private service: CourseService) {
+              private service: CourseService,
+              private auth: AuthService) {
   }
 
   getCourse() {
@@ -27,6 +32,9 @@ export class CourseDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.userState = this.auth.authState$.subscribe(x => {
+      this.changeDisp = x !== null;
+    });
     this.getCourse();
   }
 

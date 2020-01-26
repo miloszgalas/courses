@@ -1,3 +1,37 @@
 button{
   margin-bottom: 2rem;
 }
+.container{
+  font-size: 1rem;
+}
+
+ngb-rating{
+  font-size: 2rem;
+}
+
+.star {
+  position: relative;
+  display: inline-block;
+  font-size: 3rem;
+  color: #d3d3d3;
+}
+
+.full {
+  color: orange;
+}
+
+.half {
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  color: orange;
+}
+
+.filled{
+  color: orange;
+}
+
+ngb-rating {
+  color: orange;
+}
+

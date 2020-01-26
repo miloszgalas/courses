@@ -1,6 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Course} from '../interfaces/course';
 import {CourseService} from '../course.service';
+import {NgbRatingModule, NgbRatingConfig} from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-course-rating',

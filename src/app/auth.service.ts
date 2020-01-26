@@ -1,9 +1,9 @@
-import { Injectable, } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { BehaviorSubject, Observable } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {AngularFireAuth} from '@angular/fire/auth';
+import {BehaviorSubject, Observable} from 'rxjs';
 import * as firebase from 'firebase';
-import { Router } from '@angular/router';
-import { User } from 'firebase';
+import {Router} from '@angular/router';
+import {User} from 'firebase';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +14,7 @@ export class AuthService {
   dispChange: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(null);
   readonly authState$: Observable<User | null> = this.angularFireAuth.authState;
 
+  // todo refractor all
   constructor(
     private angularFireAuth: AngularFireAuth,
     private router: Router
@@ -25,9 +26,8 @@ export class AuthService {
     return this.angularFireAuth.auth
       .createUserWithEmailAndPassword(email, password)
       .then((res) => {
-        console.log('You are successfully signed up!', res);
         window.alert('You are successfully signed up!');
-        console.log(this.user.email);
+        // console.log(this.user.email);
       })
       .catch((error) => {
         console.log('Something is wrong:', error.message);
@@ -46,8 +46,8 @@ export class AuthService {
             console.log('You are Successfully logged in!');
             this.dispChange.next(true);
             this.router.navigate(['/list']);
-            console.log(this.user.email);
-          }); })
+          });
+      })
       .catch(err => {
         console.log('Something is wrong:', err.message);
         window.alert(err.message);
@@ -67,12 +67,12 @@ export class AuthService {
 
 
   getCurrentUser() {
-    this.userData =  this.angularFireAuth.authState;
+    this.userData = this.angularFireAuth.authState;
     return this.angularFireAuth.auth.currentUser;
   }
 
   getUser() {
-    this.userData =  this.angularFireAuth.authState;
+    this.userData = this.angularFireAuth.authState;
     return this.userData;
   }
 }

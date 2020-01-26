@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {NgbNavModule, NgbRatingModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbRatingModule} from '@ng-bootstrap/ng-bootstrap';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -45,8 +45,7 @@ const config = {
     NgbRatingModule,
     FormsModule,
     AngularFireModule.initializeApp(config),
-    AngularFireAuthModule,
-    NgbNavModule
+    AngularFireAuthModule
   ],
   providers: [
     CourseService

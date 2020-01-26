@@ -1,48 +1,29 @@
-<div class="container">
-  <div class="col-xs-3">
-    <div class="col-12">
+<div class="container  ">
+  <div class="row p-5">
+    <div class="col col-4">
       <h3>{{ course.name }}</h3>
+      <img src="{{course.img}}">
     </div>
-  </div>
-  <div class="col-xs-6">
-    <div class="row">
-      <div class="col-12">
+    <div class="col col-8">
+      <div class="row">
         <h4>ECTS: {{ course.ects }}</h4>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
+      <div class="row">
         <h4>Semester: {{ course.semester }}</h4>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
+      <div class="row">
         <h4>Course Type: {{ course.courseType }}</h4>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <h4>Course Type: {{ course.id }}</h4>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
+      <div class="row">
         <h4>Description: {{ course.description }}</h4>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
+      <div class="row">
         <app-course-rating [course]="course"></app-course-rating>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <button class="delete-button" (click)="removeCourse()" routerLink="/list">Usuń kurs</button>
+      <div class="row">
+        <button class="delete-button" *ngIf="changeDisp" (click)="removeCourse()" routerLink="/list">Usuń kurs</button>
       </div>
     </div>
-  </div>
-  <div class="col-xs-3">
-    <img src="{{course.img}}">
   </div>
 </div>
 
