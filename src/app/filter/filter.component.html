@@ -1,0 +1,26 @@
+<form role="form">
+  <div class="form-group">
+    <label class="m-2">Course name</label>
+    <label>
+      <input placeholder="course name" name="name" [(ngModel)]="name" type="text" class="validate">
+    </label>
+    <br><br>
+    <div class="custom-slider">
+      <ng5-slider [(value)]="semester" [options]="semesterOptions"></ng5-slider>
+    </div>
+    <div class="custom-slider">
+      <label>ECTS:</label>
+      <ng5-slider [(value)]="minects" [(highValue)]="maxects" [options]="ectsOptions"></ng5-slider>
+    </div>
+    <div class="custom-slider">
+      <label>Rating: </label>
+      <ng5-slider [(value)]="minrate" [(highValue)]="maxrate" [options]="rateOptions"></ng5-slider>
+    </div>
+    <div class="submit">
+      <hr>
+      <button class="btn btn-outline-success" (click)="filter()">Filter</button>
+      <button class="btn btn-outline-dark float-right" (click)="clearFilter()">Clear filter</button>
+    </div>
+
+  </div>
+</form>

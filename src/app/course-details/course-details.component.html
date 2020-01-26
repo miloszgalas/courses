@@ -21,7 +21,7 @@
         <app-course-rating [course]="course"></app-course-rating>
       </div>
       <div class="row">
-        <button class="delete-button" *ngIf="isAdmin()" (click)="removeCourse()" routerLink="/list">Usuń kurs</button>
+        <button class="btn btn-info mt-3  " *ngIf="isAdmin()" (click)="removeCourse()" routerLink="/list">Usuń kurs</button>
       </div>
     </div>
   </div>

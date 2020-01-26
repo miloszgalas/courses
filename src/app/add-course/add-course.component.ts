@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Course} from '../interfaces/course';
 import {CourseService} from '../services/course.service';
+import * as uuid from 'uuid';
+import {FirestoreService} from '../services/firestore.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-add-course',
@@ -13,7 +16,7 @@ export class AddCourseComponent implements OnInit {
 
   setUp() {
     this.newCourse = {
-      id: this.service.ID,
+      id: uuid.v4(),
       name: '',
       ects: 0,
       semester: 1,
@@ -35,10 +38,12 @@ export class AddCourseComponent implements OnInit {
   addCourse() {
     if (this.validate()) {
       this.service.addCourse(this.newCourse);
+      this.router.navigate(['/list']);
     }
   }
 
-  constructor(private service: CourseService) {}
+  constructor(private service: FirestoreService,
+              private router: Router) {}
 
   ngOnInit() {
     this.setUp();

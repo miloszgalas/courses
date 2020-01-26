@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit {
   // @Input() mail: string;
   userState: Subscription;
 
-  constructor(private auth: AuthService) {
+  constructor(public auth: AuthService) {
   }
   logged: boolean;
   email: string | null;

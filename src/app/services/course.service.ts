@@ -21,7 +21,7 @@ export class CourseService {
     return of(COURSES);
   }
 
-  getCourse(id: number) {
+  getCourse(id: string) {
     return of(COURSES.find(x => x.id === id));
   }
 
@@ -37,7 +37,7 @@ export class CourseService {
     console.log(COURSES.splice(index, 1));
   }
 
-  addRating(newRating: 1 | 2 | 3 | 4 | 5, course: Course, uid) {
+  addRating(newRating: 1 | 2 | 3 | 4 | 5, course: Course, uid: string) {
     const rate: Rating = {
       rating: newRating,
       UID: uid

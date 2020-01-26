@@ -16,6 +16,9 @@ import {CourseDetailsComponent} from './course-details/course-details.component'
 import {CourseRatingComponent} from './course-rating/course-rating.component';
 import {LoginRegisterComponent} from './login-register/login-register.component';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
+import { FilterComponent } from './filter/filter.component';
+import {Ng5SliderModule} from 'ng5-slider';
+import { FilterPipe } from './filter.pipe';
 
 const config = {
   apiKey: 'AIzaSyBHdm8-LinxIuVjRNmrx3xOF4FXZBgHPLU',
@@ -37,7 +40,9 @@ const config = {
     NavbarComponent,
     CourseDetailsComponent,
     CourseRatingComponent,
-    LoginRegisterComponent
+    LoginRegisterComponent,
+    FilterComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -47,7 +52,8 @@ const config = {
     FormsModule,
     AngularFireModule.initializeApp(config),
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    Ng5SliderModule
   ],
   providers: [
     CourseService

@@ -14,7 +14,7 @@ export class CourseComponent implements OnInit {
 
   @Input() course: Course;
   constructor(private service: CourseService,
-              private auth: AuthService) {
+              public auth: AuthService) {
   }
 
   getRating() {

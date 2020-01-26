@@ -3,7 +3,7 @@ import {Rating} from './interfaces/rating';
 
 export const COURSES: Course[] = [
   {
-    id: 1,
+    id: '1',
     name: 'WDAI',
     ects: 5,
     semester: 2,
@@ -14,7 +14,7 @@ export const COURSES: Course[] = [
     img: 'https://typeofweb.com/wp-content/uploads/2017/08/angular.png'
   },
   {
-    id: 2,
+    id: '2',
     name: 'WDAI',
     ects: 5,
     semester: 2,
@@ -25,7 +25,7 @@ export const COURSES: Course[] = [
     img: 'https://typeofweb.com/wp-content/uploads/2017/08/angular.png'
   },
   {
-    id: 3,
+    id: '3',
     name: 'ASD',
     ects: 5,
     semester: 2,
@@ -37,7 +37,7 @@ export const COURSES: Course[] = [
   },
   {
 
-    id: 4,
+    id: '4',
     name: 'WDAI',
     ects: 5,
     semester: 2,
@@ -49,7 +49,7 @@ export const COURSES: Course[] = [
   },
   {
 
-    id: 5,
+    id: '5',
     name: 'WDAI',
     ects: 5,
     semester: 2,
@@ -60,7 +60,7 @@ export const COURSES: Course[] = [
     img: 'https://typeofweb.com/wp-content/uploads/2017/08/angular.png  '
   },
   {
-    id: 6,
+    id: '6',
     name: 'WDAI',
     ects: 5,
     semester: 2,
@@ -71,7 +71,7 @@ export const COURSES: Course[] = [
     img: 'https://typeofweb.com/wp-content/uploads/2017/08/angular.png'
   },
   {
-    id: 7,
+    id: '7',
     name: 'WDAI',
     ects: 5,
     semester: 2,
@@ -82,7 +82,7 @@ export const COURSES: Course[] = [
     img: 'https://typeofweb.com/wp-content/uploads/2017/08/angular.png'
   },
   {
-    id: 8,
+    id: '8',
     name: 'WDAI',
     ects: 5,
     semester: 2,
@@ -93,7 +93,7 @@ export const COURSES: Course[] = [
     img: 'https://typeofweb.com/wp-content/uploads/2017/08/angular.png'
   },
   {
-    id: 9,
+    id: '9',
     name: 'WDAI',
     ects: 5,
     semester: 2,
@@ -104,7 +104,7 @@ export const COURSES: Course[] = [
     img: 'https://typeofweb.com/wp-content/uploads/2017/08/angular.png'
   },
   {
-    id: 10,
+    id: '10',
     name: 'WDAI',
     ects: 5,
     semester: 2,

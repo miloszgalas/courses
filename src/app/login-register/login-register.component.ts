@@ -9,7 +9,7 @@ import {Subscription} from 'rxjs';
 })
 export class LoginRegisterComponent implements OnInit {
 
-  constructor(private authService: AuthService) {
+  constructor(public authService: AuthService) {
   }
   @Input() changeDisp = false;
   userState: Subscription;

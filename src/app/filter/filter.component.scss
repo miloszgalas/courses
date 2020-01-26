@@ -1,0 +1,36 @@
+::ng-deep {
+.custom-slider .ng5-slider .ng5-slider-bar {
+  background: rgba(0, 190, 253, 0.45);
+  height: 2px;
+}
+.custom-slider .ng5-slider .ng5-slider-selection {
+  background: deepskyblue;
+}
+
+.custom-slider .ng5-slider .ng5-slider-pointer {
+  bottom: 0;
+  background-color: cornflowerblue;
+  //border-top-left-radius: 3px;
+  //border-top-right-radius: 3px;
+}
+
+.custom-slider .ng5-slider .ng5-slider-pointer:after {
+  display: none;
+}
+
+.custom-slider .ng5-slider .ng5-slider-tick {
+  //width: 1px;
+  //height: 10px;
+  //margin-left: 4px;
+  //border-radius: 0;
+  background: deepskyblue;
+}
+
+.custom-slider .ng5-slider .ng5-slider-tick.ng5-slider-selected {
+  background: #007a9b;
+}
+}
+
+form{
+  padding: 0px 5px;
+}

@@ -4,6 +4,7 @@ import {CourseService} from '../services/course.service';
 import {NgbRatingModule, NgbRatingConfig} from '@ng-bootstrap/ng-bootstrap';
 import {User} from '../interfaces/user';
 import {AuthService} from '../services/auth.service';
+import {FirestoreService} from '../services/firestore.service';
 
 
 @Component({
@@ -18,11 +19,13 @@ export class CourseRatingComponent implements OnInit {
   user: User;
 
   constructor(private service: CourseService,
-              private auth: AuthService) {
+              private auth: AuthService,
+              private afs: FirestoreService) {
   }
 
   addRating() {
     this.service.addRating(this.currentRate, this.course, this.user.uid);
+    this.afs.updateCourse(this.course);
   }
 
   ngOnInit() {

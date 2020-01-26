@@ -1,7 +1,7 @@
 import {Rating} from './rating';
 
 export interface Course {
-  id: number;
+  id: string;
   name: string;
   ects: number;
   semester: number;
