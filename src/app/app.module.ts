@@ -22,14 +22,6 @@ import { FilterPipe } from './filter.pipe';
 import { EditCourseComponent } from './edit-course/edit-course.component';
 
 const config = {
-  apiKey: 'AIzaSyBHdm8-LinxIuVjRNmrx3xOF4FXZBgHPLU',
-  authDomain: 'courserating-4b086.firebaseapp.com',
-  databaseURL: 'https://courserating-4b086.firebaseio.com',
-  projectId: 'courserating-4b086',
-  storageBucket: 'courserating-4b086.appspot.com',
-  messagingSenderId: '1012450166553',
-  appId: '1:1012450166553:web:39b6c2f45dee602607e788',
-  measurementId: 'G-0E624T964B'
 };
 
 @NgModule({
