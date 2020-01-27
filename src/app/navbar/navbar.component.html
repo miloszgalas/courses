@@ -12,16 +12,12 @@
           <a class="nav-link" routerLink="/list">Course list</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" *ngIf="auth.user$ | async" routerLink="/add">Add course</a>
+          <a class="nav-link" *ngIf="isAdmin()" routerLink="/add">Add course</a>
         </li>
         <li>
-          <a class="nav-link" *ngIf="auth.user$ | async as user">
+          <a class="nav-link" *ngIf="auth.user$ | async">
             {{user.email }}
           </a>
-          <ng-template #login>
-            <button class="button"></button>
-          </ng-template>
-
         </li>
       </ul>
       <app-login-register></app-login-register>

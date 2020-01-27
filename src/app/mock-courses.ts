@@ -10,6 +10,7 @@ export const COURSES: Course[] = [
     courseType: 'Auditory',
     maxAttendants: 200,
     courseRating: [],
+    enrolled: [],
     description: 'wprowadzenie do aplikacji internetowych',
     img: 'https://typeofweb.com/wp-content/uploads/2017/08/angular.png'
   },
@@ -21,6 +22,7 @@ export const COURSES: Course[] = [
     courseType: 'Auditory',
     maxAttendants: 200,
     courseRating: [],
+    enrolled: [],
     description: 'wprowadzenie do aplikacji internetowych',
     img: 'https://typeofweb.com/wp-content/uploads/2017/08/angular.png'
   },
@@ -44,6 +46,7 @@ export const COURSES: Course[] = [
     courseType: 'Auditory',
     maxAttendants: 200,
     courseRating: [],
+    enrolled: [],
     description: 'wprowadzenie do aplikacji internetowych',
     img: 'https://typeofweb.com/wp-content/uploads/2017/08/angular.png'
   },
@@ -56,6 +59,7 @@ export const COURSES: Course[] = [
     courseType: 'Auditory',
     maxAttendants: 200,
     courseRating: [],
+    enrolled: [],
     description: 'wprowadzenie do aplikacji internetowych',
     img: 'https://typeofweb.com/wp-content/uploads/2017/08/angular.png  '
   },
@@ -67,6 +71,7 @@ export const COURSES: Course[] = [
     courseType: 'Auditory',
     maxAttendants: 200,
     courseRating: [],
+    enrolled: [],
     description: 'wprowadzenie do aplikacji internetowych',
     img: 'https://typeofweb.com/wp-content/uploads/2017/08/angular.png'
   },
@@ -78,6 +83,7 @@ export const COURSES: Course[] = [
     courseType: 'Auditory',
     maxAttendants: 200,
     courseRating: [],
+    enrolled: [],
     description: 'wprowadzenie do aplikacji internetowych',
     img: 'https://typeofweb.com/wp-content/uploads/2017/08/angular.png'
   },
@@ -89,6 +95,7 @@ export const COURSES: Course[] = [
     courseType: 'Auditory',
     maxAttendants: 200,
     courseRating: [],
+    enrolled: [],
     description: 'wprowadzenie do aplikacji internetowych',
     img: 'https://typeofweb.com/wp-content/uploads/2017/08/angular.png'
   },
@@ -100,6 +107,7 @@ export const COURSES: Course[] = [
     courseType: 'Auditory',
     maxAttendants: 200,
     courseRating: [],
+    enrolled: [],
     description: 'wprowadzenie do aplikacji internetowych',
     img: 'https://typeofweb.com/wp-content/uploads/2017/08/angular.png'
   },
@@ -111,6 +119,7 @@ export const COURSES: Course[] = [
     courseType: 'Auditory',
     maxAttendants: 200,
     courseRating: [],
+    enrolled: [],
     description: 'wprowadzenie do aplikacji internetowych',
     img: 'https://typeofweb.com/wp-content/uploads/2017/08/angular.png'
   }

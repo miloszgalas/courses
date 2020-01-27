@@ -16,6 +16,7 @@ export class AddCourseComponent implements OnInit {
 
   setUp() {
     this.newCourse = {
+      enrolled: [],
       id: uuid.v4(),
       name: '',
       ects: 0,
@@ -24,7 +25,7 @@ export class AddCourseComponent implements OnInit {
       maxAttendants: 250,
       courseRating: [],
       description: '',
-      img: '',
+      img: ''
     };
   }
 

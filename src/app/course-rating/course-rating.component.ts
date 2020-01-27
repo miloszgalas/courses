@@ -24,8 +24,16 @@ export class CourseRatingComponent implements OnInit {
   }
 
   addRating() {
-    this.service.addRating(this.currentRate, this.course, this.user.uid);
-    this.afs.updateCourse(this.course);
+    if (this.isEnrolled()) {
+      this.service.addRating(this.currentRate, this.course, this.user.uid);
+      this.afs.updateCourse(this.course);
+    } else {
+      window.alert('user can only vote on courses he is enrolled for');
+    }
+  }
+
+  isEnrolled() {
+    return this.course.enrolled.filter(e => e === this.user.uid).length !== 0;
   }
 
   ngOnInit() {

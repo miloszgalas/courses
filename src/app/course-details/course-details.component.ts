@@ -16,15 +16,37 @@ export class CourseDetailsComponent implements OnInit {
 
   course: Course;
   user: User;
-  private sub: Subscription;
 
   constructor(private route: ActivatedRoute,
               private service: FirestoreService,
               private auth: AuthService) {
   }
 
-  getCourse() {
+  isEnrolled() {
+    return this.course.enrolled.filter(e => e === this.user.uid).length !== 0;
+  }
 
+  enroll() {
+    if (!this.isEnrolled()) {
+      if (this.course.enrolled.length < this.course.maxAttendants) {
+        this.course.enrolled.push(this.user.uid);
+        this.service.updateCourse(this.course);
+      } else {
+        window.alert('not enough places on course');
+      }
+    } else {
+      window.alert('user already enrolled');
+    }
+  }
+
+  disenroll() {
+    if (this.isEnrolled()) {
+      const index = this.course.enrolled.indexOf(this.user.uid);
+      this.course.enrolled.splice(index, 1);
+      this.service.updateCourse(this.course);
+    } else {
+      window.alert('user not enrolled for this event');
+    }
   }
 
   removeCourse() {
@@ -38,7 +60,6 @@ export class CourseDetailsComponent implements OnInit {
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     this.service.getCourse(id).subscribe(x => this.course = x);
-    console.log(this.service.getCourse(id));
     this.auth.user$.subscribe(usr => this.user = usr);
     // this.getCourse();
   }

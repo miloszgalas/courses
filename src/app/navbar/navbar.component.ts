@@ -1,10 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {AuthService} from '../services/auth.service';
-import {User} from 'firebase';
-// import {NgbNav} from '@ng-bootstrap/ng-bootstrap';
 import * as firebase from 'firebase';
 import {Observable, Subscription} from 'rxjs';
+import {User} from '../interfaces/user';
 
 @Component({
   selector: 'app-navbar',
@@ -14,7 +13,7 @@ import {Observable, Subscription} from 'rxjs';
 export class NavbarComponent implements OnInit {
 
   @Input() changeDisp = false;
-  @Input() user: Observable<firebase.User | null>;
+  user: User;
   // @Input() mail: string;
   userState: Subscription;
 
@@ -24,14 +23,19 @@ export class NavbarComponent implements OnInit {
   email: string | null;
 
   setUser() {
-    // this.auth.getUser().subscribe(u => this.user = u);
-    // console.log(this.user);
+    this.auth.user$.subscribe(usr => this.user = usr);
+  }
+
+  isAdmin() {
+    if (this.user !== null) {
+      return this.user.role === 'admin';
+    } else {
+      return false;
+    }
   }
 
   ngOnInit() {
-    // this.userState = this.auth.authState$.subscribe(x => {
-    //   this.changeDisp = x !== null;
-    // });
+
     this.setUser();
   }
 

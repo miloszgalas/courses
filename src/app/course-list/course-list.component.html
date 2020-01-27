@@ -10,7 +10,7 @@
 <app-filter *ngIf="filtersVisible"></app-filter>
 <div class="container">
   <br><br>
-  <div class="row list">                                             <!--(courses | searchPipe : courseFilter)"-->
+  <div class="row list mb-4">                                             <!--(courses | searchPipe : courseFilter)"-->
     <app-course class="col-4 zebra" *ngFor="let course of (courses | filter : filter)"
                 [course]="course"></app-course>
   </div>

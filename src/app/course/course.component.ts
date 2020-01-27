@@ -31,10 +31,6 @@ export class CourseComponent implements OnInit {
     }
   }
 
-  printCourse() {
-    console.log(this.service.getCourse(this.course.id));
-  }
-
   ngOnInit() {
   }
 

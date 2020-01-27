@@ -8,6 +8,7 @@ export interface Course {
   courseType: string;
   maxAttendants: number;
   courseRating: Rating[];
+  enrolled: string[];
   description: string;
   img: string;
 
