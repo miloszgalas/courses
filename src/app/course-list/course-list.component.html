@@ -1,15 +1,14 @@
 <br><br>
 
 <div class="row">
-  <div class="col-md-12">
-    <h1 class="text-center">Lista Kursów</h1>
+  <div class="col-12">
+    <h1 class="text-center mb-4">Lista Kursów</h1>
   </div>
 </div>
 <button class="btn btn-danger float-right mr-3" *ngIf="filtersVisible" (click)="hideFilters()">Hide filters</button>
 <button class="btn btn-success float-right mr-3" *ngIf="!filtersVisible" (click)="showFilters()">Show filters</button>
 <app-filter *ngIf="filtersVisible"></app-filter>
 <div class="container">
-  <br><br>
   <div class="row list mb-4">                                             <!--(courses | searchPipe : courseFilter)"-->
     <app-course class="col-4 zebra" *ngFor="let course of (courses | filter : filter)"
                 [course]="course"></app-course>

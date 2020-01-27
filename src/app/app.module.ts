@@ -19,6 +19,7 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
 import { FilterComponent } from './filter/filter.component';
 import {Ng5SliderModule} from 'ng5-slider';
 import { FilterPipe } from './filter.pipe';
+import { EditCourseComponent } from './edit-course/edit-course.component';
 
 const config = {
   apiKey: 'AIzaSyBHdm8-LinxIuVjRNmrx3xOF4FXZBgHPLU',
@@ -42,7 +43,8 @@ const config = {
     CourseRatingComponent,
     LoginRegisterComponent,
     FilterComponent,
-    FilterPipe
+    FilterPipe,
+    EditCourseComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,77 @@
+<form class="container form text-center" role="form">
+  <div class="row">
+    <div class="col-12">
+      <div class="form-group">
+        <label class="mt-4">
+          <input placeholder="Nazwa kursu" name="name" [(ngModel)]="course.name" type="text" class="validate"
+                 #name="ngModel" required>
+        </label>
+        <div class="error" *ngIf="name.touched && name.errors?.required">
+          Name is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label>
+          <input type="range" name="ects" class="custom-range" [(ngModel)]="course.ects" min="0" max="10" step="1">
+        </label><br>
+        ECTS: {{course.ects}}
+      </div>
+      <div class="form-group">
+        <label>
+          <input type="range" name="semester" class="custom-range" [(ngModel)]="course.semester" min="1" max="10"
+                 step="1">
+        </label><br>
+        Semester: {{course.semester}}
+      </div>
+      <div class="form-group">
+        <label>
+          <input placeholder="Max Attendants" name="maxStudents" [(ngModel)]="course.maxAttendants" type="number"
+                 class="validate" #maxStudents="ngModel" pattern="^[+]?([0-9]+(?:[\.][0-9]*)?|\.[0-9]+)$" required>
+        </label>
+        <div class="error" *ngIf="maxStudents.touched && maxStudents.errors?.required">
+          Max Students is required.
+        </div>
+        <div class="error" *ngIf="maxStudents.errors?.pattern && maxStudents.touched">
+          Only numbers are permitted
+        </div>
+      </div>
+      <div class="form-group">
+        <label>
+          <input placeholder="Course type" name="form" [(ngModel)]="course.courseType" type="text" class="validate"
+                 #form="ngModel" required>
+        </label>
+        <div class="error" *ngIf="form.touched && form.errors?.required">
+          Form is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label>
+<textarea placeholder="Course details" ref-textarea [(ngModel)]="course.description" name="desription" rows="4"
+          cols="20" required #description="ngModel"></textarea>
+        </label>
+        <div class="error" *ngIf="description.touched && description.errors?.required">
+          Description required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label>
+          <input placeholder="Image link" name="image" [(ngModel)]="course.img" type="text" class="validate"
+                 #courseImage="ngModel" pattern="https://.+\.[jpg|gif|png].*" required>
+        </label>
+        <div class="error" *ngIf="courseImage.touched && courseImage.errors?.required">
+          Course Image url is required.
+        </div>
+        <div class="error" *ngIf="courseImage.errors?.pattern && courseImage.touched">
+          Invalid image url.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="submit">
+    <hr>
+    <button (click)="editCourse()">Save</button>
+  </div>
+
+
+</form>

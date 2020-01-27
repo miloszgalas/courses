@@ -27,7 +27,7 @@ export class NavbarComponent implements OnInit {
   }
 
   isAdmin() {
-    if (this.user !== null) {
+    if (this.user !== null && this.user !== undefined) {
       return this.user.role === 'admin';
     } else {
       return false;

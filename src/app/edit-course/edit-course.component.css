@@ -1,0 +1,27 @@
+.course-form{
+  grid-column: 2 / 3;
+}
+
+.btn{
+  cursor: pointer;
+}
+
+.submit{
+  text-align: center;
+}
+
+.error{
+  color: red;
+}
+
+.good{
+  color: green;
+}
+
+input, textarea{
+  width: 20rem;
+}
+
+.custom-range {
+  width: 50rem;
+}

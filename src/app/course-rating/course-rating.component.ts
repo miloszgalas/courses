@@ -32,6 +32,20 @@ export class CourseRatingComponent implements OnInit {
     }
   }
 
+  getRating() {
+    let sum = 0;
+    let i = 0;
+    if (this.course.courseRating.length > 0) {
+      this.course.courseRating.forEach(
+        x => {
+          i++;
+          sum += x.rating;
+        }
+      );
+      return sum / i;
+    }
+  }
+
   isEnrolled() {
     return this.course.enrolled.filter(e => e === this.user.uid).length !== 0;
   }

@@ -1,21 +1,27 @@
 <div class="container my-5 ">
   <div class="row p-5">
-    <div class="col col-4">
-      <h3>{{ course.name }}</h3>
-      <img src="{{course.img}}" alt="{{course.name}}" class="w-100">
+    <div class="col col-4 text-center ">
+      <h3>{{ course?.name }}</h3>
+      <img src="{{course?.img}}" alt="{{course?.name}}" class="w-100">
     </div>
     <div class="col col-8">
       <div class="row">
-        <h4>ECTS: {{ course.ects }}</h4>
+        <h4>ECTS: {{ course?.ects }}</h4>
       </div>
       <div class="row">
-        <h4>Semester: {{ course.semester }}</h4>
+        <h4>Semester: {{ course?.semester }}</h4>
       </div>
       <div class="row">
-        <h4>Course Type: {{ course.courseType }}</h4>
+        <h4>Course Type: {{ course?.courseType }}</h4>
       </div>
       <div class="row">
-        <h4>Description: {{ course.description }}</h4>
+        <h4>Description: {{ course?.description }}</h4>
+      </div>
+      <div class="row">
+        <h4>Max Attendants: {{ course?.maxAttendants }}</h4>
+      </div>
+      <div class="row">
+        <h4>Rating: {{ getRating() | number: '0.0-2'}}</h4>
       </div>
       <div class="row">
         <app-course-rating [course]="course"></app-course-rating>
@@ -24,10 +30,13 @@
         <button class="btn btn-info mt-3  " *ngIf="isAdmin()" (click)="removeCourse()" routerLink="/list">Delete course</button>
       </div>
       <div class="row">
-        <button class="btn btn-info mt-3  " *ngIf="isEnrolled()" (click)="disenroll()" routerLink="/list">Disenroll</button>
+        <button class="btn btn-info mt-3  " *ngIf="isEnrolled()" (click)="disenroll()">Disenroll</button>
       </div>
       <div class="row">
-        <button class="btn btn-info mt-3  " *ngIf="!isEnrolled()" (click)="enroll()" routerLink="/list">Enroll</button>
+        <button class="btn btn-info mt-3  " *ngIf="!isEnrolled()" (click)="enroll()">Enroll</button>
+      </div>
+      <div class="row">
+        <button class="btn btn-info mt-3  " *ngIf="isAdmin()" routerLink="/edit/{{course?.id}}">Edit course</button>
       </div>
     </div>
   </div>
